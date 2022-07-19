@@ -13,7 +13,7 @@ app.use(cors());
 //serve static files from react
 
 app.get('/', (req,res) => {
-  res.send("hello from the server");
+  res.send("hello, I'm a server");
 });
 
 app.get('/api/soccer', async (req, res) => {
