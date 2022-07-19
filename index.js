@@ -1,12 +1,12 @@
 const axios = require('axios'),
  express = require('express'),
- cors = require("cors"),
+ cors = require('cors'),
  path = require('path'),
  PORT = process.env.PORT || 3333;
 app = express();
 
-const soccerKey = process.env.soccerKey;
 const { soccerKeyDevelopment } = require('./secret');
+const soccerKey = process.env.soccerKey;
 
 app.use(cors());
 

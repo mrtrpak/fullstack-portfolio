@@ -2,9 +2,9 @@
   "name": "eberfe",
   "version": "1.0.0",
   "description": "Portfolio",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
