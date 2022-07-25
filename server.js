@@ -11,6 +11,7 @@ const soccerKey = process.env.soccerKey;
 app.use(cors());
 
 //serve static files from react
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.get('/', (req,res) => {
   res.send("hello, I'm a server");
@@ -30,6 +31,11 @@ app.get('/api/soccer', async (req, res) => {
   } catch (err) {
     res.send(err);
   };
+});
+
+//anything that doesn't match the above routes will send back index.html
+app.get('*', (req,res) => {
+  res.sendFile(path.join(__dirname + '/client/build/index.html'))
 });
 
 app.listen(
