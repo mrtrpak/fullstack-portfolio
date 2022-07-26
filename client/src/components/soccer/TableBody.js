@@ -2,20 +2,30 @@ import React from 'react';
 
 import './TableBody.css';
 
+// import { standingsDevelopment } from './testing';
+
 export default function TableBody({ standings = [] }) {
+  console.log(standings);
+
   return (
-    <tbody>
+    <tbody className='table-body'>
       {
         Object.entries(standings).map((team, idx) => {
           const { name, crestUrl } = team[1].team;
           const { position, playedGames, won, draw, lost, points, goalsFor, goalsAgainst, goalDifference } = team[1];
 
           return (
-            <tr key={idx}>
-              <td>{position}</td>
-              <td><img src={crestUrl} alt='Team Badge' className='badge' /></td>
+            <tr key={idx} className={`place-${position}`}>
+              <td>
+                <span className='position-text'>{position}</span>
+              </td>
+              <td>
+                <img src={crestUrl} alt='Team Badge' className={`badge badge-${position}`} />
+              </td>
               <td>{name}</td>
-              <td>{points}</td>
+              <td>
+                <span className='points-text'>{points}</span>
+              </td>
               <td>{playedGames}</td>
               <td>{won}</td>
               <td>{draw}</td>
@@ -28,5 +38,5 @@ export default function TableBody({ standings = [] }) {
         })
       }
     </tbody>
-  )
-}
+  );
+};

@@ -1,11 +1,11 @@
 import React, {useEffect, useState } from 'react';
 
-import useStickyHeader from './useStickyHeader';
 import TableBody from './TableBody';
 
+import './Table.css';
+
 export default function Table() {
-  const { tableRef, isSticky } = useStickyHeader();
-  const [standingsData, setStandindsData] = useState();
+  const [standingsData, setStandingsData] = useState();
 
   const tableHeaders = [
     "pos", "crest", "team", "pts", "gp",
@@ -17,41 +17,24 @@ export default function Table() {
       const response = await fetch('./api/soccer');
       const data = await response.json();
 
-      setStandindsData(data);
+      setStandingsData(data);
     };
 
     fetchStandings();
   }, []);
-
-  const renderHeader = () => (
-    <thead>
-      <tr>
-        {
-          tableHeaders.map(item => (
-            <th key={item}>{item}</th>
-          ))
-        }
-      </tr>
-    </thead>
-  );
   
   return (
-    <div>
-      {isSticky && (
-        <table
-          className='sticky'
-          style={{
-            position: 'fixed', top: 0, left: 0, right: 0
-          }}
-        >
-          {renderHeader()}
-        </table>
-      )}
-      <table ref={tableRef}>
-        {renderHeader()}
+    <table className='soccer-table'>
+      <thead className='soccer-header'>
+        <tr>
+          {
+            tableHeaders.map(item => (
+              <th key={item}><span className='header-text'>{item.toUpperCase()}</span></th>
+            ))
+          }
+        </tr>
+      </thead>
         <TableBody standings={standingsData} />
-      </table>
-    </div>
-  )
-
+    </table>
+  );
 };
