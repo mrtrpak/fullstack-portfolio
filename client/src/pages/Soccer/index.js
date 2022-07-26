@@ -1,9 +1,12 @@
 import React from 'react';
 
+import Table from '../../components/soccer/Table';
+
 export default function SoccerPage() {
+
   return (
     <div>
-      soccer page
+      <Table />
     </div>
   );
 };
