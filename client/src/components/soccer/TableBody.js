@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './TableBody.css';
+
 export default function TableBody({ standings = [] }) {
   return (
     <tbody>
@@ -11,7 +13,7 @@ export default function TableBody({ standings = [] }) {
           return (
             <tr key={idx}>
               <td>{position}</td>
-              <td>{crestUrl}</td>
+              <td><img src={crestUrl} alt='Team Badge' className='badge' /></td>
               <td>{name}</td>
               <td>{points}</td>
               <td>{playedGames}</td>
