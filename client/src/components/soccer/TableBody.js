@@ -5,7 +5,6 @@ import './TableBody.css';
 // import { standingsDevelopment } from './testing';
 
 export default function TableBody({ standings = [] }) {
-  console.log(standings);
 
   return (
     <tbody className='table-body'>
