@@ -1,7 +1,13 @@
 {
   "short_name": "Portfolio",
   "name": "Trpak Portfolio",
-  "icons": [],
+  "icons": [
+    {
+      "src": "icons8-drag-list-down-48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    }
+  ],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
