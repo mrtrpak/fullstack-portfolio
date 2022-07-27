@@ -10,7 +10,12 @@ import SoccerPage from './pages/Soccer';
 
 export default function App() {
   return (
-    <div className="App">
+    <div 
+      style={{ 
+        background: 'linear-gradient(to bottom right, #35D6ED, #C9F6FF)'
+      }}
+      className='App'
+    >
       <Router>
         <Routes>
           <Route exact path="/" element={<HomePage />} />

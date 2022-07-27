@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function HomePage() {
   return (
-    <div>
+    <div style={{ height: '500px'}}>
       home page
     </div>
   );

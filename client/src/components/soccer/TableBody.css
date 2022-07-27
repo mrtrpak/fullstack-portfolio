@@ -2,6 +2,10 @@
   background-color: lightgrey;
 }
 
+.table-body tr:nth-child(even) {
+  background-color: whitesmoke;
+}
+
 .table-body tr:nth-child(-n + 4) {
   background-color: limegreen;
   border-bottom: 0.2px solid lightgrey;
@@ -25,7 +29,7 @@
   border-top: .2px solid lightgrey;
 }
 
-.position-text, .points-text {
+.position-text, .points-text, .team-name-text {
   font-size: 24px;
   font-weight: 750;
   color: gold;
@@ -43,4 +47,19 @@
 
 .badge-1 {
   padding-top: 10px;
+}
+
+.name-text {
+  font-weight: bolder;
+  font-size: large;
+  text-shadow: -1px 0.2px 0 whitesmoke,
+                1px 0.4px 0 whitesmoke,
+                1px -0.2px 0 whitesmoke,
+               -1px -0.4px 0 whitesmoke;
+}
+
+@media screen and (max-height: '600px') {
+  .name-text {
+    font-size: 16px;
+  }
 }

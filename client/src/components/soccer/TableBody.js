@@ -2,14 +2,14 @@ import React from 'react';
 
 import './TableBody.css';
 
-// import { standingsDevelopment } from './testing';
+import { standingsDevelopment } from './testing';
 
 export default function TableBody({ standings = [] }) {
 
   return (
     <tbody className='table-body'>
       {
-        Object.entries(standings).map((team, idx) => {
+        Object.entries(standingsDevelopment).map((team, idx) => {
           const { name, crestUrl } = team[1].team;
           const { position, playedGames, won, draw, lost, points, goalsFor, goalsAgainst, goalDifference } = team[1];
 
@@ -21,7 +21,9 @@ export default function TableBody({ standings = [] }) {
               <td>
                 <img src={crestUrl} alt='Team Badge' className={`badge badge-${position}`} />
               </td>
-              <td>{name}</td>
+              <td>
+                <span className='name-text'>{name}</span>
+              </td>
               <td>
                 <span className='points-text'>{points}</span>
               </td>

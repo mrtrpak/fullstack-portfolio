@@ -1,7 +1,7 @@
 .soccer-table {
   text-align: center;
   border-collapse: collapse;
-  margin-top: 15px;
+  padding-top: 15px;
 }
 
 .soccer-header {
@@ -22,7 +22,7 @@
 @media only screen and (min-width: 820px) {
   .soccer-table {
     border-radius: 20px;
-    margin: 25px auto;
+    margin: auto;
     overflow: hidden;
     width: 75%;
   }

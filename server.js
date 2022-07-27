@@ -5,7 +5,7 @@ const axios = require('axios'),
  PORT = process.env.PORT || 3333;
 app = express();
 
-// const { soccerKeyDevelopment } = require('./secret');
+const { soccerKeyDevelopment } = require('./secret');
 const soccerKey = process.env.soccerKey;
 
 app.use(cors());
@@ -23,7 +23,7 @@ app.get('/api/soccer', async (req, res) => {
       "url": 
         `https://api.football-data.org/v2/competitions/BL1/standings`,
       "headers": {
-        "X-Auth-Token": soccerKey,
+        "X-Auth-Token": soccerKeyDevelopment,
         "Content-Type": "application/json"
       }
     })

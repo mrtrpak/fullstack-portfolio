@@ -20,7 +20,7 @@ export default function Table() {
       setStandingsData(data);
     };
 
-    fetchStandings();
+    // fetchStandings();
   }, []);
   
   return (
