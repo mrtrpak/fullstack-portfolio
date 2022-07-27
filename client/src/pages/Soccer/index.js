@@ -9,7 +9,6 @@ export default function SoccerPage() {
 
   return (
     <div className='soccer-page'>
-      <Dropdown />
       <Table />
     </div>
   );
