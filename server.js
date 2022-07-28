@@ -32,17 +32,12 @@ app.get('/api/soccer', async (req, res) => {
         "Content-Type": "application/json"
       }
     })
-    console.log(response.data.standings[0].table);
+
     res.send(response.data.standings[0].table);
   } catch (err) {
     res.send(err);
   };
 });
-
-// app.post('/api/soccer/league', (req, res) => {
-//   leagueCode = req.body;
-//   console.log(leagueCode.leagueCode);
-// });
 
 // anything that doesn't match the above routes will send back index.html
 app.get('*', (req,res) => {

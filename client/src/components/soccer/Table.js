@@ -1,10 +1,10 @@
 import React, {useEffect, useState, Fragment, useCallback } from 'react';
+import axios from 'axios';
 
 import Dropdown from './Dropdown';
 import TableBody from './TableBody';
 
 import './Table.css';
-import axios from 'axios';
 
 export default function Table() {
   const [standingsData, setStandingsData] = useState();
@@ -21,15 +21,16 @@ export default function Table() {
 
   useEffect(() => {
     const fetchStandings = async () => {
-      const response = await axios.get('/api/soccer', {
+      const response = await axios.get('/api/soccer',
+      {
         params: {
           code: leagueCode
         }
       });
 
-      const data = await response.json();
+      console.log(response.data);
 
-      setStandingsData(data);
+      setStandingsData(response.data);
     };
 
     fetchStandings();
@@ -42,21 +43,6 @@ export default function Table() {
     // };
 
     // fetchStandings();
-
-    const requestOptions = {
-      method: 'POST',
-      body: JSON.stringify({ leagueCode }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    };
-
-    const sendLeagueCode = async () => {
-      const response = await fetch('/api/soccer/league', requestOptions);
-      const json = await response.json();
-    };
-
-    sendLeagueCode();
 
   }, [leagueCode]);
   
