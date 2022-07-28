@@ -17,6 +17,7 @@
 }
 
 .icon-container:hover {
+  cursor: pointer;
   transform: scale(1.2);
   box-shadow: 2px 2px 8px 2px black;
 }

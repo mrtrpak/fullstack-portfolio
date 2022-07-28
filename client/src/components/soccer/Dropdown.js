@@ -11,15 +11,15 @@ export default function Dropdown({ parentCallback }) {
     display === 'none' ? setDisplay('block') : setDisplay('none');
   };
 
-  const getLeagueCode = code => {
+  const changeLeagueCode = code => {
     switch (code) {
       case 'PL': parentCallback('PL');
         break;
       case 'PD': parentCallback('PD');
         break;
       default: parentCallback('BL1');
-    }
-  }
+    };
+  };
   
   return (
     <div className='dropdown'>
@@ -30,10 +30,10 @@ export default function Dropdown({ parentCallback }) {
         <div className='table-key'>
           <button className='btn'>TABLE KEY</button>
         </div>
-        <button onClick={() => getLeagueCode('PL')} className='btn league-btn'>Premier League</button>
-        <button onClick={() => getLeagueCode('PD')} className='btn league-btn'>La Liga</button>
+        <button onClick={() => changeLeagueCode('PL')} className='btn league-btn'>Premier League</button>
+        <button onClick={() => changeLeagueCode('PD')} className='btn league-btn'>La Liga</button>
       </div>
 
     </div>
-  )
-}
+  );
+};

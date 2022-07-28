@@ -4,6 +4,7 @@ import Dropdown from './Dropdown';
 import TableBody from './TableBody';
 
 import './Table.css';
+import axios from 'axios';
 
 export default function Table() {
   const [standingsData, setStandingsData] = useState();
@@ -14,24 +15,54 @@ export default function Table() {
     "won", "draw", "lost", "gf", "ga", "gd"
   ];
 
-  const sendLeagueCode = useCallback(code => {
-     setLeagueCode(code)
-  }, []);
+  const getLeagueCode = useCallback(code => {
+    setLeagueCode(code);
+ }, []);
 
   useEffect(() => {
     const fetchStandings = async () => {
-      const response = await fetch('./api/soccer');
+      const response = await axios.get('/api/soccer', {
+        params: {
+          code: leagueCode
+        }
+      });
+
       const data = await response.json();
 
       setStandingsData(data);
     };
 
+    fetchStandings();
+
+    // const fetchStandings = async () => {
+    //   const response = await fetch(`/api/soccer?leagueCode=${leagueCode}`);
+    //   const data = await response.json();
+
+    //   setStandingsData(data);
+    // };
+
     // fetchStandings();
-  }, []);
+
+    const requestOptions = {
+      method: 'POST',
+      body: JSON.stringify({ leagueCode }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+
+    const sendLeagueCode = async () => {
+      const response = await fetch('/api/soccer/league', requestOptions);
+      const json = await response.json();
+    };
+
+    sendLeagueCode();
+
+  }, [leagueCode]);
   
   return (
     <Fragment>
-      <Dropdown parentCallback={sendLeagueCode} />
+      <Dropdown parentCallback={getLeagueCode} />
       <h1>{leagueCode}</h1>
       <table className='soccer-table'>
         <thead className='soccer-header'>
