@@ -30,8 +30,15 @@ export default function Dropdown({ parentCallback }) {
         <div className='table-key'>
           <button className='btn'>TABLE KEY</button>
         </div>
-        <button onClick={() => changeLeagueCode('PL')} className='btn league-btn'>Premier League</button>
-        <button onClick={() => changeLeagueCode('PD')} className='btn league-btn'>La Liga</button>
+        <button onClick={() => changeLeagueCode('PL')} className='btn league-btn'>Engilsh Premier League</button>
+        <button onClick={() => changeLeagueCode('PD')} className='btn league-btn'>Spanish La Liga</button>
+        <button onClick={() => changeLeagueCode('SA')} className='btn league-btn'>Italian Serie A</button>
+        <button onClick={() => changeLeagueCode('FL1')} className='btn league-btn'>French Ligue 1</button>
+        <button onClick={() => changeLeagueCode('PPL')} className='btn league-btn'>Portuguese Primeira Liga</button>
+        <button onClick={() => changeLeagueCode('DED')} className='btn league-btn'>Dutch Eredivisie</button>
+
+
+
       </div>
 
     </div>
