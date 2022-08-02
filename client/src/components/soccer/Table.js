@@ -35,15 +35,6 @@ export default function Table() {
 
     fetchStandings();
 
-    // const fetchStandings = async () => {
-    //   const response = await fetch(`/api/soccer?leagueCode=${leagueCode}`);
-    //   const data = await response.json();
-
-    //   setStandingsData(data);
-    // };
-
-    // fetchStandings();
-
   }, [leagueCode]);
   
   return (
@@ -60,7 +51,7 @@ export default function Table() {
             }
           </tr>
         </thead>
-          <TableBody standings={standingsData} />
+          <TableBody standings={standingsData} league={leagueCode} />
       </table>
     </Fragment>
   );

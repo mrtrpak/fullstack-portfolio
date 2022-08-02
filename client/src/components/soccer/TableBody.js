@@ -4,15 +4,18 @@ import './TableBody.css';
 
 import { standingsDevelopment } from './testing';
 
-export default function TableBody({ standings = [] }) {
+export default function TableBody({ standings = [], league = '' }) {
 
   console.log(standings, 'body standings')
   return (
-    <tbody className='table-body'>
+    <tbody className={`table-body table-body-${league}`}>
       {
-        Object.entries(standings).map((team, idx) => {
+        Object.entries(standingsDevelopment).map((team, idx) => {
           const { name, crestUrl } = team[1].team;
-          const { position, playedGames, won, draw, lost, points, goalsFor, goalsAgainst, goalDifference } = team[1];
+          const { 
+            position, playedGames, won, draw, lost, points, 
+            goalsFor, goalsAgainst, goalDifference 
+          } = team[1];
 
           return (
             <tr key={idx} className={`place-${position}`}>

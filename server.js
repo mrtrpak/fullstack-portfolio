@@ -3,6 +3,7 @@ const axios = require('axios'),
  cors = require('cors'),
  path = require('path'),
  PORT = process.env.PORT || 3333;
+
 app = express();
 
 const { soccerKeyDevelopment } = require('./secret');
@@ -12,9 +13,6 @@ app.use(cors());
 
 // serve static files from react
 app.use(express.static(path.join(__dirname, 'client/build')));
-
-// allows server to read post request sent as json
-app.use(express.json({ limit: '1mb' }));
 
 app.get('/', (req,res) => {
   res.send("hello, I'm a server");
