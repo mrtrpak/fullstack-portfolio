@@ -17,6 +17,14 @@ export default function Dropdown({ parentCallback }) {
         break;
       case 'PD': parentCallback('PD');
         break;
+      case 'SA': parentCallback('SA');
+        break;
+      case 'FL1': parentCallback('FL1');
+        break;
+      case 'PPL': parentCallback('PPL');
+        break;
+      case 'DED': parentCallback('DED');
+        break;
       default: parentCallback('BL1');
     };
   };

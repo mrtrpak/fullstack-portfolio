@@ -38,7 +38,6 @@ export default function Table() {
   return (
     <Fragment>
       <Dropdown parentCallback={getLeagueCode} />
-      <h1>{leagueCode}</h1>
       <table className='soccer-table'>
         <thead className='soccer-header'>
           <tr>
