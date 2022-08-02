@@ -2,7 +2,7 @@ import React from 'react';
 
 import './TableBody.css';
 
-import { standingsDevelopment } from './testing';
+// import { standingsDevelopment } from './testing';
 
 export default function TableBody({ standings = [], league = '' }) {
 
@@ -10,7 +10,7 @@ export default function TableBody({ standings = [], league = '' }) {
   return (
     <tbody className={`table-body table-body-${league}`}>
       {
-        Object.entries(standingsDevelopment).map((team, idx) => {
+        Object.entries(standings).map((team, idx) => {
           const { name, crestUrl } = team[1].team;
           const { 
             position, playedGames, won, draw, lost, points, 

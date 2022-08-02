@@ -28,8 +28,6 @@ export default function Table() {
         }
       });
 
-      console.log(response.data);
-
       setStandingsData(response.data);
     };
 
