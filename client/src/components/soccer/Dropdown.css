@@ -50,9 +50,15 @@
   margin-top: 20%;
   top: 1;
   left: -14px;
-
 }
 
+.table-key {
+  border-bottom: 2px solid black;
+  width: 70%;
+  margin: auto;
+  margin-bottom: 15px;
+  
+}
 .btn {
   border: none;
   background-color: inherit;
@@ -65,4 +71,13 @@
 .btn:hover {
   transform: scale(1.2);
   text-shadow: 2px 2px 8px black;
+}
+
+.escape-container {
+  text-align: right;
+}
+
+.league-btn {
+  margin: auto;
+  display: block;
 }

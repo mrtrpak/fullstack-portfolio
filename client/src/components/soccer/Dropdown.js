@@ -35,9 +35,15 @@ export default function Dropdown({ parentCallback }) {
         <img src={dropdownIcon} alt='dropdown icon' className='dropdown-icon' />
       </div>
       <div className='dropdown-menu' style={{ display: display }}>
-        <button className='escape' onClick={() => setDisplay('none')}>X</button>
+        <div className='escape-container'>
+          <button className='btn' 
+            onClick={() => setDisplay('none')}
+          >
+            X
+          </button>
+        </div>
         <div className='table-key'>
-          <button className='btn'>TABLE KEY</button>
+          <button className='btn'>-- TABLE KEY --</button>
         </div>
         <button onClick={() => changeLeagueCode('PL')} className='btn league-btn'>English Premier League</button>
         <button onClick={() => changeLeagueCode('PD')} className='btn league-btn'>Spanish La Liga</button>
@@ -46,7 +52,6 @@ export default function Dropdown({ parentCallback }) {
         <button onClick={() => changeLeagueCode('PPL')} className='btn league-btn'>Portuguese Primeira Liga</button>
         <button onClick={() => changeLeagueCode('DED')} className='btn league-btn'>Dutch Eredivisie</button>
       </div>
-
     </div>
   );
 };
