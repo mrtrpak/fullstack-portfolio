@@ -5,7 +5,7 @@ import dropdownIcon from '../../icons/icons8-drag-list-down-48.png';
 import './Dropdown.css';
 
 export default function Dropdown({ parentCallback }) {
-  const [display, setDisplay] = useState('block');
+  const [display, setDisplay] = useState('none');
 
   const handleHover = () => {
     display === 'none' ? setDisplay('block') : setDisplay('none');
@@ -35,10 +35,11 @@ export default function Dropdown({ parentCallback }) {
         <img src={dropdownIcon} alt='dropdown icon' className='dropdown-icon' />
       </div>
       <div className='dropdown-menu' style={{ display: display }}>
+        <button className='escape' onClick={() => setDisplay('none')}>X</button>
         <div className='table-key'>
           <button className='btn'>TABLE KEY</button>
         </div>
-        <button onClick={() => changeLeagueCode('PL')} className='btn league-btn'>Engilsh Premier League</button>
+        <button onClick={() => changeLeagueCode('PL')} className='btn league-btn'>English Premier League</button>
         <button onClick={() => changeLeagueCode('PD')} className='btn league-btn'>Spanish La Liga</button>
         <button onClick={() => changeLeagueCode('SA')} className='btn league-btn'>Italian Serie A</button>
         <button onClick={() => changeLeagueCode('FL1')} className='btn league-btn'>French Ligue 1</button>
