@@ -5,11 +5,21 @@
   padding: 0;
 }
 
+html {
+  height: 100%;
+}
+
 a {
   text-decoration: none;
   cursor: pointer;
 }
 
+body {
+  background-image: linear-gradient(to bottom right, #35D6ED, #C9F6FF);
+  background-repeat: no-repeat;
+}
 body, html {
   font-family: 'Playfair Display', serif;
 }
+
+

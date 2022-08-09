@@ -44,9 +44,6 @@ export default function Dropdown({ parentCallback }) {
         <button onClick={() => changeLeagueCode('FL1')} className='btn league-btn'>French Ligue 1</button>
         <button onClick={() => changeLeagueCode('PPL')} className='btn league-btn'>Portuguese Primeira Liga</button>
         <button onClick={() => changeLeagueCode('DED')} className='btn league-btn'>Dutch Eredivisie</button>
-
-
-
       </div>
 
     </div>
