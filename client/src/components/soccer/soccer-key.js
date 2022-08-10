@@ -37,3 +37,5 @@ const soccerKeyGuide = [
     }
   }
 ]
+
+module.exports = { soccerKeyGuide };
