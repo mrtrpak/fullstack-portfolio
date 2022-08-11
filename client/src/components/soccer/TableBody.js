@@ -18,7 +18,7 @@ export default function TableBody({ standings = [], league = '' }) {
           } = team[1];
 
           return (
-            <tr key={idx} className={`${league}-place-${position}`}>
+            <tr key={idx} className={`place-${position}`}>
               <td>
                 <span className='position-text'>{position}</span>
               </td>
