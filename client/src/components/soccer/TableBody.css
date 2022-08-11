@@ -6,28 +6,31 @@
   background-color: whitesmoke;
 }
 
-.table-body tr:nth-child(-n + 4) {
+/* Bundesliga styling */
+.table-body-BL1 tr:nth-child(-n + 4) {
   background-color: limegreen;
   border-bottom: 0.2px solid lightgrey;
 }
 
-.table-body tr:nth-child(n + 5):nth-child(-n + 6) {
+.table-body-BL1 tr:nth-child(n + 5):nth-child(-n + 6) {
   background-color: lime;
   border-bottom: 0.2px solid lightgrey;
 }
 
-.table-body tr:nth-child(7) {
+.table-body-BL1 tr:nth-child(7) {
   background-color: yellowgreen;
 }
 
-.table-body tr:nth-last-of-type(3) {
+.table-body-BL1 tr:nth-last-of-type(3) {
   background-color: orange;
 }
 
-.table-body tr:nth-last-child(-n+2) {
+.table-body-BL1 tr:nth-last-child(-n+2) {
   background-color: orangered;
   border-top: .2px solid lightgrey;
 }
+
+/* Premier League styling */
 
 .position-text, .points-text, .team-name-text {
   font-size: 24px;
